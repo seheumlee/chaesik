@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>채식인서시현 - 한국 채식식당 지도</title>
+    <meta name="author" conetnet="이세흠" />
+    <meta name="description" content="채식주의자들을 위한 식당 검색 서비스" />
+    <meta
+        name="keywords"
+        content="채식, 채식주의자, 식당, 비건, 식당추천"
+    />
+    <link rel="stylesheet" href="vegmap.css" />
+    <link rel="stylesheet" href="map.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="inner">
+          <div class="nav-container">
+            <img class="nav-title" src="logo.png" onclick="location.href='index.html'"/>
+          </div>
+        </div>
+      </nav>
+
+    <main>
+        <section id="category">
+            <div class="inner">
+                <div class="category-container">
+                        <button class="fixed-category" onclick="location.href='index.html'"><strong>홈 화면으로 돌아가기</strong></button
+                          ><button class="fixed-category" onclick="location.href='veginfo.html'"><strong>채식 가이드</strong></button>
+                    <div class="category-list">
+                        <button class="category-item" id="korea">한식</button
+                        ><button class="category-item" id="america">양식</button
+                        ><button class="category-item" id="cafe">카페 / 디저트</button
+                        ><button class="category-item" id="etc">Etc.</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div id="map" class="inner"></div>
+
+        <script type="text/javascript" 
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=596ef43c3ade04cf4a2dfb2c0a5433ef&libraries=services"
+        ></script>
+        <script src="vegmap.js"></script>
+</body>
+</html>
