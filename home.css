@@ -103,4 +103,13 @@
   .intro {
     display: block;
   }
+
+  .img {
+    width: 80%;
+    height: auto;
+}
+
+    .description {
+    width: 80%;
+    height: auto;
 }
