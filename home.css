@@ -99,7 +99,7 @@
     line-height: 2.5rem;
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 900px) {
   .intro {
     display: block;
   }
