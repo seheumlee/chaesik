@@ -65,6 +65,11 @@ nav {
     font-size: 1.6rem;
 }
 
+.fixed-category:hover {
+    color: rgb(78, 162, 98);
+    cursor: pointer;
+}
+
 .category-item:hover {
     color: rgb(78, 162, 98);
     cursor: pointer;
