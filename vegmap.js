@@ -1,19 +1,15 @@
-var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-var options = { //지도를 생성할 때 필요한 기본 옵션
-	center: new kakao.maps.LatLng(37.56667, 126.97806), //지도의 중심좌표.
-	level: 13 //지도의 레벨(확대, 축소 정도)
+var container = document.getElementById('map');
+var options = {
+	center: new kakao.maps.LatLng(37.56667, 126.97806),
+	level: 13
 };
 
-var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+var map = new kakao.maps.Map(container, options);
 
-// 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
 var mapTypeControl = new kakao.maps.MapTypeControl();
 
-// 지도에 컨트롤을 추가해야 지도위에 표시됩니다
-// kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
 map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
-// 지도 확대 축소를 제어할 수 있는 줌 컨트롤을 생성합니다
 var zoomControl = new kakao.maps.ZoomControl();
 map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
@@ -917,14 +913,11 @@ const dataSet = [
 	}
 ];
 
-// 주소-좌표 변환 객체를 생성합니다
+
 var geocoder = new kakao.maps.services.Geocoder();
 function getCoordsByAddress(address) {
-  // promise 형태로 반환
   return new Promise((resolve, reject) => {
-    // 주소로 좌표를 검색합니다
     geocoder.addressSearch(address, function (result, status) {
-      // 정상적으로 검색이 완료됐으면
       if (status === kakao.maps.services.Status.OK) {
         var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
         return resolve(coords);
@@ -965,16 +958,12 @@ async function setMap(dataSet) {
 
 	markerArray.push(marker);
 
-	// 마커에 표시할 인포윈도우를 생성합니다 
 	var infowindow = new kakao.maps.InfoWindow({
 		content: getContent(dataSet[i]), 
 	});
 
 	infowindowArray.push(infowindow);
 	
-	// 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
-	// 이벤트 리스너로는 클로저를 만들어 등록합니다 
-	// for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
 	kakao.maps.event.addListener(
 		marker, 'click',
 		makeOverListener(map, marker, infowindow, coords));
@@ -984,7 +973,6 @@ async function setMap(dataSet) {
   }
 }
 
-// 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
 function makeOverListener(map, marker, infowindow, coords) {
     return function() {
 		CloseInfoWindow();
@@ -1000,7 +988,6 @@ function CloseInfoWindow() {
 	}
 }
 
-// 인포윈도우를 닫는 클로저를 만드는 함수입니다 
 function makeOutListener(infowindow) {
     return function() {
         infowindow.close();
@@ -1028,10 +1015,8 @@ const categoryMap = {
 	  }
 	}
   
-	// 기존 마커 삭제
 	closeMarker();
   
-	// 기존 인포윈도우 닫기
 	CloseInfoWindow();
   
 	setMap(categorizedDataSet);
