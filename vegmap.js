@@ -31,6 +31,7 @@ const dataSet = [
 		{
 		title: "비건나무",
 		address: "충남 아산시 탕정면 탕정면로 37",
+		image: "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20231116_15%2F1700111131927TQi2O_JPEG%2F20231116_105742.jpg",
 		category: "카페/디저트",
 	},
 	{
