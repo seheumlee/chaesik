@@ -28,6 +28,11 @@ const dataSet = [
 		image: "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMzBfMTYz%2FMDAxNjcyNDA4OTU0MDA5.sqZQQrd378xpiIUMRy9NWemf97XTbFqThLjHSuWRkWEg.NfPxABiV5NEJSZBGD67gBPuh3ZmvQpBoMGzXF5HqoSkg.JPEG%2FScreenshot_20221230_225229.jpg",
 		category: "양식",
 	},
+		{
+		title: "비건나무",
+		address: "충남 아산시 탕정면 탕정면로 37",
+		category: "카페/디저트",
+	},
 	{
 		title: "수잔네허브식당",
 		address: "서울 마포구 월드컵로8길 41",
